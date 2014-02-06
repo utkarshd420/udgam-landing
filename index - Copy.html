@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Udgam | IIT Guwahati</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://udgam.in/favicon.ico" />
+<link href="first.css" rel="stylesheet" type="text/css" />
+<link href="second.css" rel="stylesheet" type="text/css" />
+<link href="third.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100,300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+<link href="lightbox.css" rel="stylesheet">
+<style>
+#panel{
+background:#F8F8F8;
+position: fixed;
+
+opacity: 0.4;
+z-index:1;
+width: 125px;
+height: 165px;
+border-bottom-right-radius:2em;
+font:15px arial,sans-serif;
+}
+#tell {
+border-radius: 4em;
+border-style: solid;
+border-width: 5px;
+border-color:#920505;
+font-size:3em;
+height:180px;
+width:180px;
+font-weight:300;
+color:#920505;
+cursor:pointer;
+}
+.dbar
+{
+	position:absolute;
+	height: 42px;
+	width: 4px;
+	background:#900;
+	left: 55%;
+	top: 112%;
+}
+</style>
+<script src="jquery-1.10.2.min.js"></script>
+<script src="lightbox-2.6.min.js"></script>
+		<script>
+		function animate(x)
+		{
+			x.style.background="#920505";
+			x.style.color="#FFFFFF";
+			x.style.fontWeight="400";
+		}
+		function revanimate(x)
+		{
+			x.style.background="white";
+			x.style.color="#920505";
+			x.style.fontWeight="300";
+		}
+		function changecol(x)
+		{
+			x.style.color="#E80000";
+		}
+		function revertcol(x)
+		{
+			x.style.color="#B80000";
+		}
+		function secchangecol(x)
+		{
+			x.style.color="#66CCFF";
+		}
+		function secrevertcol(x)
+		{
+			x.style.color="#39C";
+		}
+		function thirdchangecol(x)
+		{
+			x.style.color="#99FF33";
+		}
+		function thirdrevertcol(x)
+		{
+			x.style.color="#6C3";
+		}
+		$(document).ready(function(){
+		$("#first,#second,#third").hide();
+		$("#anim").hide();
+		$("#first").animate({left:(""+document.getElementById("base").offsetWidth+"px"),top:(""+(document.getElementById("anim").offsetHeight)+"px")});
+		$("#tell").click(function(){
+		$("#anim").show();
+		$("#anim").animate({width:"+=45%"},400,function(){
+		$("#first").show();
+		$("#in-panel,#panel").show();
+		document.getElementById("first").style.top="69.7%";
+			$("#base").animate({left:("-=100%")});
+			$("#first").animate({left:'0px'},function(){
+			$("#first").animate({top:'0px',scrollTop:0})});
+			$("#second").animate({left:(""+document.getElementById("first").offsetWidth+"px"),top:(""+(document.getElementById("first").offsetHeight)+"px")},function(){$("#base,#second").hide();});
+			$("#third").animate({left:(""+document.getElementById("second").offsetWidth+"px"),top:(""+(document.getElementById("second").offsetHeight)+"px")},function(){$("#third").hide();});
+		});
+		});
+		function abc(i)
+		{
+		$("#"+i).fadeIn(200);
+		if(i==8)
+		{//window.location="http://udgam.in";
+		}
+		}
+		$('#scrolladv').click(function(){var x=document.getElementById('corner-below').offsetTop;$('body,html').animate({scrollTop:x},600,function(){document.getElementById('corner-below').click()})});
+		$('#rogerscroll').click(function(){var x2=document.getElementById('second-corner-below').offsetTop;$('body,html').animate({scrollTop:x2},600,function(){document.getElementById('second-corner-below').click()})});
+		$('#hellscroll').click(function()
+		{
+		var x2=500;
+		document.getElementById("changelast").style.display="block";
+		$('body,html').animate({scrollTop:x2},600,function(){
+			var i=1;$("#logolast").fadeIn(200);
+				setInterval(function(){abc(i++)},500);
+				
+		})
+		
+		});
+		$("#one").click(function(){
+			document.getElementById("in-panel").style.color="#900";
+			document.getElementById("mark").style.background="#900";
+			$("#mark").animate({top: ""+(this.offsetTop+4)+"px"});
+			$("#second,#third,#first").show();
+			$("#first,body,html").animate({top:'0px',left:'0px',scrollTop:0});
+			$("#second").animate({left:(""+document.getElementById("first").offsetWidth+"px"),top:(""+(document.getElementById("first").offsetHeight-8)+"px")});
+			$("#third").animate({left:(""+document.getElementById("second").offsetWidth+"px"),top:(""+(document.getElementById("second").offsetHeight)+"px")},function(){$("#second,#third").hide();});
+			
+			});
+			$("#two").click(function(){
+			document.getElementById("in-panel").style.color="#39C";
+			document.getElementById("mark").style.background="#39C";
+			$("#second,#third,#first").show();
+			$("#second,body,html").animate({top:'0px',left:'0px',scrollTop:0});
+			$("#first").animate({left:("-"+document.getElementById("second").offsetWidth+"px"),top:("-"+(document.getElementById("first").offsetHeight+8)+"px")});
+			$("#mark").animate({top: ""+(this.offsetTop+4)+"px"});
+			$("#third").animate({left:(""+document.getElementById("second").offsetWidth+"px"),top:(""+(document.getElementById("second").offsetHeight)+"px")},function(){$("#first,#third").hide();});
+			});
+			$("#three").click(function(){
+			document.getElementById("in-panel").style.color="#6C3";
+			document.getElementById("mark").style.background="#6C3";
+			$("#second,#third,#first").show();
+			$("#third,body,html").animate({top:'0px',left:'0px',scrollTop:0});
+			$("#second").animate({left:("-"+document.getElementById("third").offsetWidth+"px"),top:("-"+(document.getElementById("third").offsetHeight)+"px")});
+		$("#first").animate({left:("-="+document.getElementById("second").offsetWidth+"px"),top:("-="+(document.getElementById("second").offsetHeight)+"px")},function(){$("#first,#second").hide();});
+			$("#mark").animate({top: ""+(this.offsetTop+4)+"px"});
+			
+			});
+	 	$("#corner-below").click(function(){
+		$("#second").show();
+		document.getElementById("in-panel").style.color="#39C";
+		document.getElementById("mark").style.background="#39C";
+			$("#second,body,html").animate({top:'0px',left:'0px',scrollTop:0},390);
+			$("#first").animate({left:("-"+document.getElementById("second").offsetWidth+"px"),top:("-"+(document.getElementById("second").offsetHeight+8)+"px")});
+			$("#mark").animate({top: ""+(document.getElementById("two").offsetTop+4)+"px"});
+			$("#third").animate({left:(""+document.getElementById("second").offsetWidth+"px"),top:(""+(document.getElementById("second").offsetHeight)+"px")},function(){$("#first,#third").hide();});
+		});
+		
+		$("#second-corner-below").click(function(){
+			document.getElementById("in-panel").style.color="#6C3";
+			document.getElementById("mark").style.background="#6C3";
+			$("#mark").animate({top: ''+(document.getElementById("three").offsetTop+4)+"px"});
+		$("#second,#third,#first").show();
+			$("#third,body,html").animate({top:'0px',left:'0px',scrollTop:0});
+			$("#second").animate({left:("-"+document.getElementById("third").offsetWidth+"px"),top:("-"+(document.getElementById("third").offsetHeight)+"px")});
+		$("#first").animate({left:("-="+document.getElementById("second").offsetWidth+"px"),top:("-="+(document.getElementById("second").offsetHeight)+"px")},function(){$("#first,#second").hide();});
+		});
+		
+		$("#third-corner-below").click(function(){
+			document.getElementById("in-panel").style.color="#900";
+			document.getElementById("mark").style.background="#900";
+			$("#mark").animate({top:''+(document.getElementById("one").offsetTop+4)+"px"});
+			$("#first,#second,#third").show();
+			$("#first,body,html").animate({top:'0px',left:'0px',scrollTop:0});
+			$("#second").animate({left:(""+document.getElementById("first").offsetWidth+"px"),top:(""+(document.getElementById("first").offsetHeight-8)+"px")});
+			$("#third").animate({left:(""+document.getElementById("second").offsetWidth+"px"),top:(""+(document.getElementById("second").offsetHeight)+"px")},function(){$("#second,#third").hide();});
+			
+			});
+		});
+		</script>
+
+</head>
+
+<body>
+<div id="panel" style="display:none;"></div>
+<div id="in-panel" style="position:fixed;z-index:1;color:#900;font-family: Calibri, sans-serif, monospace;font-weight:bold;font-size:14px;cursor:pointer;display:none">
+<div id="mark" style="width:-5px; background:#900; height:10px; position:absolute; padding-left:1em; left: -6px; top: 78px;"></div>
+<img id="img" src="img/logo.png" height="60px" width="60px" style="padding:0.4em 2em;">
+<div id="one" style="padding:0.4em 2em;">FIRST</div>
+<div id="two" style="padding:0.4em 2em;">SECOND</div>
+<div id="three" style="padding:0.4em 2em;">THIRD</div>
+</div>
+<div id="base" style="position:absolute;width:100%;height:100%;">
+<span style="font-family: 'Quicksand',sans-serif;font-size:1.4em;font-weight:400;position:absolute;top:61%;left:15%;width:25cm;text-align:justify;">
+NECESSITY IS THE MOTHER OF INVENTION. </br>THE MOMENT YOU SEE A PROBLEM AROUND YOU, YOUR BRAIN STARTS WEAVING THOUSANDS OF WAYS TO SOLVE IT.</br> BUT THE NEXT MINUTE, YOU FIND SOMETHING ELSE TO PONDER ABOUT.</br>
+THAT ONE MOMENT OF INSPIRATION, ALL LOST, DOWN THE DRAIN.</br>
+LIFE'S TOO SHORT TO FOLLOW A TREADED PATH.</br> CHOOSE TO LIVE YOUR DREAM. TO DO WHAT YOU LOVE, TO LOVE WHAT YOU DO.</br>
+TAKE THE ROAD NOT TAKEN.
+</span>
+<div id="anim" class="dbar"></div>
+<span id="tell" style="position:absolute;top: 100%;left:38%;" onmouseover="animate(this)" onmouseout="revanimate(this)"><span style="font-size:0.7em;position:absolute;top:37%;left:10%;font-family:'Roboto Slab',serif;">TELL ME</span></span>
+<span style="position:absolute;top:8%;left:15%;font-size:1.8cm;background: #920505;font-weight:700;padding:0.35em 0.4em 0.317em;color:white;font-family:'Roboto Slab',serif;letter-spacing:4px;">WE'VE GOT SOMETHING</span>
+<span style="position:absolute;top:33%;left:15%;font-size:2.8cm;background: #C80000;padding:0.1em 0.4em 0.1em;color:white;font-weight:700;font-weight: 2000;font-family:'Roboto Slab',serif;letter-spacing:2px;">BIG TO SAY</span>
+</div>
+<!--For first screen -->
+<div id="first" style="position:absolute;height:100%;width:100%;">
+<div id="text1" style="position:absolute;top:190px;width:53%;left:6%;font-size: 2.8em;color:#B80000;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;">
+what kind of a life do you want?
+</div>
+<div id="text2" style="position:absolute;top:49%;width:auto;left:36%;font-size: 2.8em;color:#B80000;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;text-align:right;cursor:pointer;">
+<span onmouseover=changecol(this) onmouseout=revertcol(this) style="cursor:pointer;"><a  style="font-family:inherit;color:inherit;text-decoration:none" href="img/nice-try.jpg" data-lightbox="image-2">boring</a></span></br>
+<span id="scrolladv" onmouseover=changecol(this) onmouseout=revertcol(this)>adventurous</span>
+</div>
+<div id="bar" class="horizontal-bar">
+</div>
+<div id="corner">
+</div>
+<div id="vertical-bar">
+<div id="corner-below" style="cursor:pointer;">
+</div>
+</div>
+<div style="position:absolute;top:100%;left:60%;width:40%;">
+<div class="horizontal-bar" style="width:100%;position:absolute; top:307px;">
+</div>
+</div>
+</div>
+<!-- Code for first screen ends here, Next is the code for the second screen -->
+<div id="second" style="position:absolute; height:100%; width:100%; left:100%; top: 100%;">
+<div id="second-text1" style="position:absolute;top:26%;width:53%;left:4%;font-size: 2.8em;color:#39C;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;text-align:right;">
+do you want to stand out and make a difference?
+</div>
+<div id="second-text2" style="position:absolute;top:56%;width:auto;left:40%;font-size: 2.8em;color:#39C;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;text-align:right;cursor:pointer;">
+<span id="rogerscroll" onmouseover=secchangecol(this) onmouseout=secrevertcol(this)>roger that!</span></br>
+<span onmouseover=secchangecol(this) onmouseout=secrevertcol(this) style="cursor:not-allowed;"><a  style="font-family:inherit;color:inherit;text-decoration:none" href="img/could-you.jpg" data-lightbox="image-1">negative</a></span>
+</div>
+<div id="second-bar" class="second-horizontal-bar" style="background:linear-gradient(to right, #900,#39C);">
+</div>
+<div id="second-corner"></div>
+<div id="second-vertical-bar">
+<div id="second-corner-below"></div>
+</div>
+<div style="position:absolute;top:100%;left:60%;width:40%;">
+<div class="second-horizontal-bar" style="left:1px;width:100%;top: 307px;"></div>
+</div></div>
+<!--Code for the second screen ends here, Next is the code for the third screen-->
+<div id="third" style="position:absolute; height:100%; width:100%; left:0px; top: 100%;">
+<div id="third-text1" style="position:absolute;top:26%;width:53%;left:4%;font-size: 2.8em;color:#6C3;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;text-align:right;">
+do you have the guts to pursue what you love?
+</div>
+<div id="third-text2" style="position:absolute;top:56%;width:auto;left:40%;font-size: 2.8em;color:#6C3;padding: 0.5em;font-weight:bold;border-radius:0.5em;font-family:'Roboto Slab',serif;text-align:right;cursor:pointer;">
+<span id="hellscroll" onmouseover=thirdchangecol(this) onmouseout=thirdrevertcol(this)>hell yeah!</span>
+</div>
+<div id="third-bar" class="third-horizontal-bar" style="background:linear-gradient(to right, #39C,#6C3);">
+</div>
+<div id="third-corner" ></div>
+<div id="third-vertical-bar" style="background:linear-gradient(to bottom, #6C3,rgb(246,147,30));">
+<div style="position:absolute;top:100%;left:-100px;width:40%;padding:2em 0 -4px 0">
+<img src="img/logo.png" id="logolast" style="height:550px;width:440px;position:absolute;left:-440px;top:-440px;display:none;"/>
+<div style="font-size:4em;text-align:center;font-family:'Roboto Slab',serif;font-weight:700;color:rgb(246,147,30)">
+<span id="1" style="display:none;position:absolute;left:100px;">#</span>
+<span id="2" style="display:none;position:absolute;left:148px;">B</span>
+<span id="3" style="display:none;position:absolute;left:190px;">e</span>
+<span id="4" style="display:none;position:absolute;left:220px;">U</span>
+<span id="5" style="display:none;position:absolute;left:265px;">d</span>
+<span id="6" style="display:none;position:absolute;left:300px;">g</span>
+<span id="7" style="display:none;position:absolute;left:335px;">a</span>
+<span id="8" style="display:none;position:absolute;left:370px;">m</span></div>
+<div id="changelast" style="position:absolute;left:150px;top:74px;text-align:left;font-family:'Roboto Slab',serif;font-weight:300;font-size:1.2em;width:250px;padding-bottom:50px;display:none;font-style:italic">
+Be the change</div>
+</div>
+</div>
+</div>
+</body>
+</html>

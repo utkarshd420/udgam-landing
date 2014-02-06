@@ -1,0 +1,46 @@
+.horizontal-bar{
+	position:absolute;
+	height: 42px;
+	width: 60%;
+	background:#900;
+	left: -1px;
+	top: 271px;
+	}
+#corner
+{
+	position: absolute;
+	display:inline-block;
+	font-size: 35em; /* This controls the size. */
+	width: 0.45em;
+	height: 225px;
+	border: 0.08em solid #900;
+	border-bottom-right-radius:0.3em;
+	border-top-left-radius:0.3em;
+	border-top-right-radius: 0.3em;
+	left: 60%;
+	top: 0px;
+}
+#corner-below
+{
+	position: relative;
+	font-size: 35em; /* This controls the size. */
+	width: 0.45em;
+	height: 225px;
+	border: 0.08em solid #900;
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius:0.3em;
+	border-top-left-radius:0.3em;
+	//border-top-right-radius: 0.3em;
+	left:-0.52em;
+	top: 100%;
+}
+
+#vertical-bar
+{
+	position:absolute;
+	width: 47px;
+	height :100%;
+	background: #900;
+	left: 60%;
+	top: 307px;
+	}
